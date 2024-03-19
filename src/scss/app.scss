@@ -1,0 +1,245 @@
+@use "./abstract/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@500;700&family=Poppins:wght@600&family=Ubuntu+Mono&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  position: relative;
+  padding-bottom: 24px;
+  padding-right: 20px;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.sidebar {
+  background-color: $background-sidebar;
+  height: 100vh;
+  width: $sidebar-width;
+  padding: 40px 52px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &__logo {
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 120px;
+
+    span {
+      color: #f7542e;
+    }
+  }
+
+  &__menu {
+    font-family: Noto Sans JP;
+    font-size: 14px;
+    color: #9e9e9e;
+
+    ul {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .active {
+      color: #090f31;
+    }
+  }
+}
+
+.main {
+  padding-top: 60px;
+  padding-left: ($sidebar-width + 80px);
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: #4f4f4f;
+    font-family: Poppins;
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 45px;
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      justify-content: start;
+      gap: 100px;
+
+      &.fill {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.input {
+  & {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: Noto Sans JP;
+    font-size: 12px;
+    font-weight: 400;
+    color: $input-color;
+    min-width: 200px;
+
+    &.fullWidth {
+      width: 100%;
+    }
+
+    &:focus-within {
+      color: $focus-color;
+    }
+
+    .content {
+      border: 1.5px solid #828282;
+      border-radius: 8px;
+      padding: 18px 12px;
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      gap: 12px;
+      color: #828282;
+
+      &.sm {
+        padding: 10px 12px;
+      }
+
+      input,
+      textarea {
+        border: 0;
+        outline: 0;
+        font-size: 14px;
+        font-weight: 500;
+
+        &.fullWidth {
+          width: 100%;
+        }
+
+        //make text
+        &:hover,
+        &:focus {
+          outline: none !important;
+          color: $input-color;
+        }
+      }
+
+      //make border
+      &:hover {
+        border: 1.5px solid $input-color !important;
+      }
+
+      //make border
+      &:focus-within {
+        border: 1.5px solid $focus-color !important;
+      }
+    }
+
+    .helper-text {
+      font-size: 10px;
+      font-weight: 400;
+      color: #828282;
+    }
+  }
+
+  &.error {
+    color: $error-color;
+
+    .content {
+      border: 1.5px solid $error-color;
+
+      //make border
+      &:hover {
+        border: 1.5px solid $input-color !important;
+      }
+
+      //make border
+      &:focus-within {
+        border: 1.5px solid $error-color !important;
+      }
+    }
+
+    .helper-text {
+      color: $error-color;
+    }
+  }
+
+  &.disabled {
+    .content {
+      background: $disabled-color;
+      border: 1.5px solid #e0e0e0;
+
+      //make border
+      &:hover {
+        border: 1.5px solid #e0e0e0 !important;
+      }
+
+      input {
+        background: $disabled-color;
+      }
+    }
+  }
+}
+
+.component-container {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 180px;
+  flex: 1;
+
+  .tag-text {
+    color: #333333;
+    font-family: Ubuntu Mono;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .event-text {
+    font-family: Ubuntu Mono;
+    font-size: 12px;
+    font-weight: 400;
+    color: #828282;
+  }
+}
+
+#footer {
+  margin-top: 60px;
+  gap: 32px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  color: #a9a9a9;
+
+  b {
+    font-weight: 700;
+  }
+}
