@@ -1,4 +1,4 @@
-@use "./abstract/" as *;
+@use "./variables" as *;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@500;700&family=Poppins:wght@600&family=Ubuntu+Mono&display=swap");
 
 * {
@@ -70,21 +70,21 @@ a {
   display: flex;
   flex-direction: column;
 
-  &__title {
+  .title {
     color: #4f4f4f;
     font-family: Poppins;
     font-size: 24px;
     margin-bottom: 28px;
   }
 
-  &__content {
+  .content {
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     gap: 45px;
 
-    &__row {
+    .row {
       display: flex;
       flex-direction: row;
       align-items: start;
@@ -111,6 +111,12 @@ a {
 
     &.fullWidth {
       width: 100%;
+
+      .content {
+        input {
+          width: 100%;
+        }
+      }
     }
 
     &:focus-within {
@@ -137,10 +143,6 @@ a {
         outline: 0;
         font-size: 14px;
         font-weight: 500;
-
-        &.fullWidth {
-          width: 100%;
-        }
 
         //make text
         &:hover,
@@ -213,20 +215,17 @@ a {
   justify-content: start;
   flex-direction: column;
   gap: 12px;
-  min-width: 180px;
+  min-width: 300px;
   flex: 1;
+  font-family: Ubuntu Mono;
+  font-size: 12px;
+  font-weight: 400;
 
   .tag-text {
     color: #333333;
-    font-family: Ubuntu Mono;
-    font-size: 12px;
-    font-weight: 400;
   }
 
   .event-text {
-    font-family: Ubuntu Mono;
-    font-size: 12px;
-    font-weight: 400;
     color: #828282;
   }
 }

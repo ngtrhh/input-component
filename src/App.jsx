@@ -1,24 +1,23 @@
 import ComponentContainer from "./components/ComponentContainer";
 import Input from "./components/Input";
 import Sidebar from "./components/Sidebar";
-import { MdLocalPhone, MdLock } from "react-icons/md";
 
 function App() {
   return (
     <div>
       <Sidebar />
       <div className="main">
-        <div className="main__title">Inputs</div>
+        <div className="title">Inputs</div>
         {/*<Input />*/}
-        <div className="main__content">
-          <div className="main__content__row">
+        <div className="content">
+          <div className="row">
             <ComponentContainer
               tag
               title="<Input />"
               children={() => <Input label="Label" placeholder="Placeholder" />}
             />
 
-            <ComponentContainer
+            {/* <ComponentContainer
               title="&:hover"
               children={() => <Input label="Label" placeholder="Placeholder" />}
             />
@@ -26,10 +25,10 @@ function App() {
             <ComponentContainer
               title="&:focus"
               children={() => <Input label="Label" placeholder="Placeholder" />}
-            />
+            /> */}
           </div>
           {/*<Input error />*/}
-          <div className="main__content__row">
+          <div className="row">
             <ComponentContainer
               tag
               title="<Input error/>"
@@ -38,7 +37,7 @@ function App() {
               )}
             />
 
-            <ComponentContainer
+            {/* <ComponentContainer
               title="&:hover"
               children={() => (
                 <Input error label="Label" placeholder="Placeholder" />
@@ -50,11 +49,11 @@ function App() {
               children={() => (
                 <Input error label="Label" placeholder="Placeholder" />
               )}
-            />
+            /> */}
           </div>
 
           {/*<Input disabled />*/}
-          <div className="main__content__row">
+          <div className="row">
             <ComponentContainer
               tag
               title="<Input disabled />"
@@ -65,7 +64,7 @@ function App() {
           </div>
 
           {/*<Input helperText=”Some interesting text” />*/}
-          <div className="main__content__row">
+          <div className="row">
             <ComponentContainer
               tag
               title="<Input helperText=”Some interesting text” />"
@@ -93,7 +92,7 @@ function App() {
           </div>
 
           {/*icon*/}
-          <div className="main__content__row">
+          <div className="row">
             <ComponentContainer
               tag
               title="<Input startIcon />"
@@ -101,7 +100,9 @@ function App() {
                 <Input
                   label="Label"
                   placeholder="Placeholder"
-                  startIcon={() => <MdLocalPhone size={18} />}
+                  startIcon={() => (
+                    <span class="material-symbols-outlined">call</span>
+                  )}
                 />
               )}
             />
@@ -113,14 +114,16 @@ function App() {
                 <Input
                   label="Label"
                   placeholder="Placeholder"
-                  endIcon={() => <MdLock size={18} />}
+                  endIcon={() => (
+                    <span class="material-symbols-outlined">lock</span>
+                  )}
                 />
               )}
             />
           </div>
 
           {/*value*/}
-          <div className="main__content__row">
+          <div className="row">
             <ComponentContainer
               tag
               title="<Input value=”text” />"
@@ -131,7 +134,7 @@ function App() {
           </div>
 
           {/*<Input size=”sm” />*/}
-          <div className="main__content__row">
+          <div className="row">
             <ComponentContainer
               tag
               title="<Input size=”sm” />"
@@ -149,7 +152,7 @@ function App() {
           </div>
 
           {/*fullWidth*/}
-          <div className="main__content__row fill">
+          <div className="row fill">
             <ComponentContainer
               tag
               title="<Input fullWidth />"
@@ -165,7 +168,7 @@ function App() {
           </div>
 
           {/*multiline*/}
-          <div className="main__content__row">
+          <div className="row">
             <ComponentContainer
               tag
               title="<Input multiline row=”4” />"
