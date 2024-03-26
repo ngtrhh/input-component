@@ -14,17 +14,17 @@ function App() {
             <ComponentContainer
               tag
               title="<Input />"
-              children={() => <Input label="Label" placeholder="Placeholder" />}
+              children={() => <Input />}
             />
 
             {/* <ComponentContainer
               title="&:hover"
-              children={() => <Input label="Label" placeholder="Placeholder" />}
+              children={() => <Input  />}
             />
 
             <ComponentContainer
               title="&:focus"
-              children={() => <Input label="Label" placeholder="Placeholder" />}
+              children={() => <Input  />}
             /> */}
           </div>
           {/*<Input error />*/}
@@ -32,22 +32,20 @@ function App() {
             <ComponentContainer
               tag
               title="<Input error/>"
-              children={() => (
-                <Input error label="Label" placeholder="Placeholder" />
-              )}
+              children={() => <Input error />}
             />
 
             {/* <ComponentContainer
               title="&:hover"
               children={() => (
-                <Input error label="Label" placeholder="Placeholder" />
+                <Input error  />
               )}
             />
 
             <ComponentContainer
               title="&:focus"
               children={() => (
-                <Input error label="Label" placeholder="Placeholder" />
+                <Input error  />
               )}
             /> */}
           </div>
@@ -57,9 +55,7 @@ function App() {
             <ComponentContainer
               tag
               title="<Input disabled />"
-              children={() => (
-                <Input disabled label="Label" placeholder="Placeholder" />
-              )}
+              children={() => <Input disabled />}
             />
           </div>
 
@@ -68,25 +64,14 @@ function App() {
             <ComponentContainer
               tag
               title="<Input helperText=”Some interesting text” />"
-              children={() => (
-                <Input
-                  label="Label"
-                  placeholder="Placeholder"
-                  helperText="Some interesting text"
-                />
-              )}
+              children={() => <Input helperText="Some interesting text" />}
             />
 
             <ComponentContainer
               tag
               title="<Input helperText=”Some interesting text” error />"
               children={() => (
-                <Input
-                  error
-                  label="Label"
-                  placeholder="Placeholder"
-                  helperText="Some interesting text"
-                />
+                <Input error helperText="Some interesting text" />
               )}
             />
           </div>
@@ -98,11 +83,9 @@ function App() {
               title="<Input startIcon />"
               children={() => (
                 <Input
-                  label="Label"
-                  placeholder="Placeholder"
-                  startIcon={() => (
+                  startIcon={
                     <span class="material-symbols-outlined">call</span>
-                  )}
+                  }
                 />
               )}
             />
@@ -112,11 +95,7 @@ function App() {
               title="<Input endIcon />"
               children={() => (
                 <Input
-                  label="Label"
-                  placeholder="Placeholder"
-                  endIcon={() => (
-                    <span class="material-symbols-outlined">lock</span>
-                  )}
+                  endIcon={<span class="material-symbols-outlined">lock</span>}
                 />
               )}
             />
@@ -127,9 +106,7 @@ function App() {
             <ComponentContainer
               tag
               title="<Input value=”text” />"
-              children={() => (
-                <Input label="Label" placeholder="Placeholder" value="Text" />
-              )}
+              children={() => <Input value="Text" />}
             />
           </div>
 
@@ -138,16 +115,12 @@ function App() {
             <ComponentContainer
               tag
               title="<Input size=”sm” />"
-              children={() => (
-                <Input label="Label" placeholder="Placeholder" size="sm" />
-              )}
+              children={() => <Input size="sm" />}
             />
             <ComponentContainer
               tag
               title="<Input size=”md” />"
-              children={() => (
-                <Input label="Label" placeholder="Placeholder" size="md" />
-              )}
+              children={() => <Input size="md" />}
             />
           </div>
 
@@ -156,14 +129,7 @@ function App() {
             <ComponentContainer
               tag
               title="<Input fullWidth />"
-              children={() => (
-                <Input
-                  label="Label"
-                  placeholder="Placeholder"
-                  fullWidth
-                  value="Text"
-                />
-              )}
+              children={() => <Input fullWidth value="Text" />}
             />
           </div>
 
@@ -172,14 +138,7 @@ function App() {
             <ComponentContainer
               tag
               title="<Input multiline row=”4” />"
-              children={() => (
-                <Input
-                  label="Label"
-                  placeholder="Placeholder"
-                  multiline
-                  row="4"
-                />
-              )}
+              children={() => <Input multiline row="4" />}
             />
           </div>
         </div>

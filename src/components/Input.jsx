@@ -1,39 +1,47 @@
 import { useState } from "react";
 
-const Input = (props) => {
-  const StartIcon = props.startIcon;
-  const EndIcon = props.endIcon;
-
-  const [value, setValue] = useState(props.value);
-  const size = props.size ? props.size : "md";
-  const error = props.error ? "error" : "";
-  const disabled = props.disabled ? "disabled" : "";
-  const fullWidth = props.fullWidth ? "fullWidth" : "";
+const Input = ({
+  label = "Label",
+  placeholder = "Placeholder",
+  size = "md",
+  error = false,
+  disabled = false,
+  fullWidth = false,
+  multiline = false,
+  row = 1,
+  helperText,
+  value,
+  startIcon,
+  endIcon,
+}) => {
+  const [inputValue, setInputValue] = useState(value);
 
   return (
-    <div className={`input ${error} ${disabled} ${fullWidth}`}>
-      {props.label}
+    <div
+      className={`input-component${error ? " error" : ""}${
+        disabled ? " disabled" : ""
+      }${fullWidth ? " fullWidth" : ""}`}
+    >
+      {label}
 
-      {!props.multiline ? (
-        <div className={`content ${size && size}`}>
-          {props.startIcon && <StartIcon />}
+      {!multiline ? (
+        <div className={`content ${size}`}>
+          {startIcon}
           <input
-            placeholder={props.placeholder}
-            value={value}
-            disabled={props.disabled}
-            onChange={(e) => setValue(e.target.value)}
+            placeholder={placeholder}
+            value={inputValue}
+            disabled={disabled}
+            onChange={(e) => setInputValue(e.target.value)}
           />
-          {props.endIcon && <EndIcon />}
+          {endIcon}
         </div>
       ) : (
         <div className="content">
-          <textarea rows={props.row} placeholder={props.placeholder} />
+          <textarea rows={row} placeholder={placeholder} />
         </div>
       )}
 
-      {props.helperText && (
-        <div className="helper-text">{props.helperText}</div>
-      )}
+      {helperText && <div className="helper-text">{helperText}</div>}
     </div>
   );
 };

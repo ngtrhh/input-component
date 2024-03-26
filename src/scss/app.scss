@@ -98,7 +98,7 @@ a {
   }
 }
 
-.input {
+.input-component {
   & {
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@ a {
     }
 
     &:focus-within {
-      color: $focus-color;
+      color: $primary-color;
     }
 
     .content {
@@ -160,7 +160,7 @@ a {
 
       //make border
       &:focus-within {
-        border: 1.5px solid $focus-color !important;
+        border: 1.5px solid $primary-color !important;
       }
     }
 
@@ -172,10 +172,10 @@ a {
   }
 
   &.error {
-    color: $error-color;
+    color: $danger-color;
 
     .content {
-      border: 1.5px solid $error-color;
+      border: 1.5px solid $danger-color;
 
       //make border
       &:hover {
@@ -184,12 +184,12 @@ a {
 
       //make border
       &:focus-within {
-        border: 1.5px solid $error-color !important;
+        border: 1.5px solid $danger-color !important;
       }
     }
 
     .helper-text {
-      color: $error-color;
+      color: $danger-color;
     }
   }
 
